@@ -1,3 +1,5 @@
+import React from 'react';
+
 const getHtmlValue = (html) => {
   return { __html: html };
 };
