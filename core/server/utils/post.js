@@ -17,8 +17,8 @@ module.exports.getPostMeta = function (fileContent) {
 };
 
 module.exports.getPostContent = function (fileContent) {
-  var reg = /(---\n(.|[\r\n])+--\n)((.|[\s]+))/;
+  var reg = /(---\n(.|[\r\n])+--\n)((.|[\s])+)/;
   var matches = fileContent.match(reg);
-  if(matches) return matche[3];
+  if(matches) return matches[3];
   return '';
 };
