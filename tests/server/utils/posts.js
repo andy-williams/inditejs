@@ -20,20 +20,19 @@ describe('utils', function() {
 
       it('should get meta data', function() {
         var expectedMetaData = {
-          layout: 'post',
-          title: "Dinosaurs are extinct today",
-          subtitle: "because they lacked opposable thumbs and the brainpower to build a space program.",
-          date: '2014-06-10 12:00:00',
-          author: "Start Bootstrap",
-          'header-img' : "img/post-bg-01.jpg"
+          "layout": "post",
+          "title": "Dinosaurs are extinct today",
+          "subtitle": "because they lacked opposable thumbs and the brainpower to build a space program.",
+          "date": new Date('2014-06-10 12:00:00'),
+          "author": "Start Bootstrap",
+          "header-img" : "img/post-bg-01.jpg"
         };
 
         var fileContent = fs.readFileSync(path.join(
           __dirname, '/../test-files/2014-06-10-dinosaurs.markdown'
         ), 'utf8');
-        var metaData = post.getPostMeta(fileContent);
-
-        assert.equal(expectedMetaData, metaData);
+        var metaData = post.getPostMetaData(fileContent);
+        assert.deepEqual(expectedMetaData, metaData);
       })
 
       it('should get content', function() {
@@ -44,7 +43,6 @@ describe('utils', function() {
           __dirname, '/../test-files/2014-06-10-dinosaurs.markdown.content.txt'
         ), 'utf8');
         var contentBody = post.getPostContent(fileContent);
-
         assert.equal(expectedContentBody, contentBody);
       })
     })
