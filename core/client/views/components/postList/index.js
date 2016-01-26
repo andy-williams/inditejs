@@ -13,16 +13,16 @@ export default class PostList extends Component {
   render() {
     const postList = [].map((post) => {
       return (
-          <a>{post.title}</a>
+        <a>{post.title}</a>
       );
     });
 
     return (
-        <div className="post-list-container">
-          <ul className="post-list">
-            {postList}
-          </ul>
-        </div>
+      <div className="post-list-container">
+        <ul className="post-list">
+          {postList}
+        </ul>
+      </div>
     );
   }
 }

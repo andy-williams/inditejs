@@ -11,14 +11,14 @@ module.exports.getPostSlug = function (filename) {
 
 module.exports.getPostMeta = function (fileContent) {
   var reg = /(---\n(.|[\r\n])+--\n)((.|[\s])+)/;
-  var matches = reg.match(fileContent);
+  var matches = fileContent.match(reg);
   if(matches) return YAML.parse(matches[1]);
   return '';
 };
 
 module.exports.getPostContent = function (fileContent) {
   var reg = /(---\n(.|[\r\n])+--\n)((.|[\s]+))/;
-  var matches = reg.match(fileContent);
+  var matches = fileContent.match(reg);
   if(matches) return matche[3];
   return '';
 };
