@@ -1,28 +1,28 @@
 import React from 'react';
-const { Component } = React;
 
-export default class PostList extends Component {
-  static initialState = {
-    posts: []
-  };
+const PostItem = ({
+  postItem,
+  onPostClick
+}) => (
+  <li className="post-list-item">
+    <a onClick={(e) => onPostClick(postItem.title)}>{postItem.title}</a>
+  </li>
+)
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const postList = [].map((post) => {
-      return (
-        <a>{post.title}</a>
-      );
-    });
-
-    return (
-      <div className="post-list-container">
-        <ul className="post-list">
-          {postList}
-        </ul>
-      </div>
-    );
-  }
+const PostList = ({
+  posts,
+  onPostClick,
+}) => {
+  let postList = posts.map(function(post) {
+    return PostItem(post, onPostClick);
+  });
+  return (
+  <div className="post-list-container">
+    <ul className="post-list">
+      {postList}
+    </ul>
+  </div>
+  )
 }
+
+export default PostList;
