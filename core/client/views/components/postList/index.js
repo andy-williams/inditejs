@@ -14,7 +14,7 @@ const PostList = ({
   onPostClick,
 }) => {
   let postList = posts.map(function(post) {
-    return PostItem(post, onPostClick);
+    return PostItem({ postItem: post, onPostClick: onPostClick });
   });
   return (
   <div className="post-list-container">

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './views/containers/app.js';
 import store from './store';
 
-let render = () => {
+const render = () => {
   ReactDOM.render(
       <App />,
       document.getElementById("app-container")

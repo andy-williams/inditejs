@@ -5,8 +5,21 @@ import PostList from './../components/PostList';
 import Editor from './../components/Editor';
 const { Component } = React;
 import { setMarkdownChange } from './../../actions/editor';
+import { setOpenPost } from './../../actions/app';
 
+const postListDummy = [
+    {
+      title: '111'
+    },
+    {
+      title: '222'
+    },
+    {
+      title: '333'
+    }
+];
 
+const onPostClick = (post) => store.dispatch(setOpenPost(post));
 
 export default class App extends Component {
   render() {
@@ -17,10 +30,11 @@ export default class App extends Component {
         store.dispatch(setMarkdownChange(mdVal))
       }
     };
+    console.log(postListDummy);
     return (
       <Provider store={store}>
         <div className="app-container">
-          <PostList />
+          { PostList({ posts: postListDummy, onPostClick: onPostClick }) }
           { Editor(editorProps) }
         </div>
       </Provider>
