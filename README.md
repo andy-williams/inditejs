@@ -2,7 +2,7 @@
 
 A bridge between static site generator with manually managing files and a blogging platform driven by a database.
 
-This tool provides a way to manage your Jekyll blog content as if you were using a blogging platform.
+This tool provides a web front-end for managing your Jekyll blog content as if you were using a blogging platform.
 
 This solution is currently using React, Redux for the SPA and Koa as the server.
 
