@@ -2,14 +2,17 @@ var posts = require('./../../models/posts');
 var tfs = require('./../../utils/fs');
 var path = require('path');
 var config = require('./../../config');
-var postUtils = require('./../../utils/post');
+var postUtils = require('./../../../shared/utils/post');
+var dateFormat = require('dateformat');
 
 var getPostThunk = function(src) {
   return new Promise(function(resolve, reject) {
+    var filename = path.basename(src);
     tfs.readFileThunk(src).then(function(data) {
       resolve({
-        slug: postUtils.getPostSlug(src),
-        date: postUtils.getPostDate(src),
+        id: filename,
+        slug: postUtils.getPostSlug(filename),
+        date: dateFormat(postUtils.getPostDate(filename), 'yyyy-mm-dd'),
         metaData: postUtils.getPostMetaData(data),
         content: postUtils.getPostContent(data)
       });

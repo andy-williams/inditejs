@@ -3,17 +3,20 @@ import React from 'react';
 const PostItem = ({
   postItem,
   onPostClick
-}) => (
-  <li className="post-list-item">
-    <a onClick={(e) => onPostClick(postItem.title)}>{postItem.title}</a>
-  </li>
-)
+}) => {
+  const handleClick = onPostClick.bind(null, postItem.id);
+  return (
+    <li key={postItem.id} className="post-list-item">
+      <a onClick={handleClick}>{postItem.slug}</a>
+    </li>
+  )
+}
 
 const PostList = ({
   posts,
   onPostClick,
 }) => {
-  let postList = posts.map(function(post) {
+  const postList = posts.map(function(post) {
     return PostItem({ postItem: post, onPostClick: onPostClick });
   });
   return (

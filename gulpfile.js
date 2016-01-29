@@ -72,7 +72,7 @@ gulp.task('css', function () {
       .pipe(cssnano())
       .pipe(sourcemaps.write('.', {debug: true}))
       // https://github.com/unlight/gulp-cssimport/issues/12
-      .pipe(gulp.dest(config.paths.dist + '/css/css'))
+      .pipe(gulp.dest(config.paths.dist + '/css/css/css/css'))
 })
 
 // live rebuild
