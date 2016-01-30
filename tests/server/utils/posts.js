@@ -1,4 +1,4 @@
-var post = require('./../../../core/server/utils/post');
+var post = require('./../../../core/common/utils/post');
 var fs = require('fs');
 var path = require('path');
 var assert = require('assert');
