@@ -1,4 +1,5 @@
 import React from 'react';
+import EditorHeader from './editor-header';
 
 const getHtmlValue = (html) => {
   return { __html: html };

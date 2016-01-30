@@ -1,10 +1,16 @@
-let marked = require('marked');
-export const CHANGE_MARKDOWN = 'CHANGE_MARKDOWN'
+export const CHANGE_CONTENT = 'CHANGE_CONTENT';
+export const OPEN_CONTENT = 'OPEN_CONTENT';
 
-export function setMarkdownChange(md) {
+export function changeContent(md) {
   return {
-    type: CHANGE_MARKDOWN,
-    mdValue: md,
-    htmlValue: marked(md)
+    type: CHANGE_CONTENT,
+    mdValue: md
+  }
+}
+
+export function openPost(post) {
+  return {
+    type: OPEN_CONTENT,
+    post: post
   }
 }

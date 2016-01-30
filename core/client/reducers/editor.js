@@ -1,18 +1,32 @@
-import { CHANGE_MARKDOWN } from '../actions/editor';
+const marked = require('marked');
+import {
+  CHANGE_CONTENT,
+  OPEN_CONTENT
+} from '../actions/editor';
 
-const initialState = {
+export const initialState = {
+  mdValueIsDirty: false,
+  _mdValue: '',
   mdValue: '',
   htmlValue: ''
-};
+}
 
-export default function editor(state = initialState, action) {
-  const { type, mdValue, htmlValue } = action;
+export function editor(state = initialState, action) {
+  switch(action.type) {
 
-  if (type == CHANGE_MARKDOWN) {
-    return {
-      mdValue: mdValue,
-      htmlValue: htmlValue
-    };
+    case CHANGE_CONTENT:
+      return {
+        mdValue: action.mdValue,
+        htmlValue: marked(action.mdValue)
+      }
+
+    case OPEN_CONTENT:
+      const post = action.post;
+      return {
+        mdValue: post.content,
+        _mdValue: post.content,
+        htmlValue: marked(post.content)
+      }
   }
 
   return initialState;

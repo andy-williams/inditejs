@@ -34,10 +34,6 @@ function openPostSuccess(post) {
   }
 }
 
-function toPostItem(post) {
-
-}
-
 export function fetchPost(id) {
   return function(dispatch) {
     dispatch(openPostRequest(id));

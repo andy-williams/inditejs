@@ -1,3 +1,5 @@
+import { editor, initialState as editorInitialState } from './editor';
+import { openPost } from './../actions/editor';
 import {
   OPEN_POST_REQUEST,
   OPEN_POST_SUCCESS,
@@ -13,7 +15,8 @@ const initialState = {
   isPostSaving: false,
   isPostSavingSuccess: false,
   isPostLoading: false,
-  isPostListUpdating: false
+  isPostListUpdating: false,
+  editor: editorInitialState
 };
 
 export default function app(state = initialState, action) {
@@ -25,9 +28,12 @@ export default function app(state = initialState, action) {
       })
 
     case OPEN_POST_SUCCESS:
+
+      let editorAction = openPost(action.post);
       return Object.assign({}, state, {
         isPostLoading: false,
-        currentPost: action.post
+        currentPost: action.post,
+        editor: editor(state.editor, editorAction)
       })
 
     case UPDATE_POST_LIST_REQUEST:

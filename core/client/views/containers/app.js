@@ -4,7 +4,7 @@ import store from '../../store';
 import PostList from './../components/PostList';
 import Editor from './../components/Editor';
 const { Component } = React;
-import { setMarkdownChange } from './../../actions/editor';
+import { changeContent } from './../../actions/editor';
 import {
   fetchPost,
   updatePostList
@@ -16,10 +16,10 @@ const onPostClick = (id) =>
 export default class App extends Component {
   render() {
     let editorProps = {
-      mdvalue: store.getState().editor.mdValue,
-      htmlValue: store.getState().editor.htmlValue,
+      mdvalue: store.getState().app.editor.mdValue,
+      htmlValue: store.getState().app.editor.htmlValue,
       onMdChange: (mdVal) => {
-        store.dispatch(setMarkdownChange(mdVal))
+        store.dispatch(changeContent(mdVal))
       }
     };
     return (
