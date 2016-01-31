@@ -23,7 +23,7 @@ export const DELETE_POST_FAIL = 'DELETE_POST_FAIL';
 function openPostRequest(id) {
   return {
     type: OPEN_POST_REQUEST,
-    id: id
+    id: id,
   }
 }
 
@@ -69,7 +69,8 @@ export function updatePostList() {
       .then(json => json.map(function(post) {
         return {
           id: post.filename,
-          slug: postUtils.getPostSlug(post.filename)
+          slug: postUtils.getPostSlug(post.filename),
+          active: false
         };
       }))
       .then(json =>

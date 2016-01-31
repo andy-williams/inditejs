@@ -14,7 +14,6 @@ import {
 
 const initialState = {
   posts: [],
-  currentPost: null,
   isNewPost: false,
   isPostSaving: false,
   isPostSavingSuccess: false,
@@ -28,7 +27,11 @@ export default function app(state = initialState, action) {
     case OPEN_POST_REQUEST:
       return Object.assign({}, state, {
         isPostLoading: true,
-        currentPost: action.post
+        posts: state.posts.map((post) => {
+          return Object.assign({}, post, {
+            active: action.id == post.id
+          })
+        })
       })
 
     case OPEN_POST_SUCCESS:
@@ -36,7 +39,6 @@ export default function app(state = initialState, action) {
       let editorAction = openPost(action.post);
       return Object.assign({}, state, {
         isPostLoading: false,
-        currentPost: action.post,
         editor: editor(state.editor, editorAction)
       })
 

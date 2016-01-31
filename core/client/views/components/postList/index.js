@@ -5,8 +5,9 @@ const PostItem = ({
   onPostClick
 }) => {
   const handleClick = onPostClick.bind(null, postItem.id);
+  const liClass = `post-list-item ${postItem.active ? 'active' : ''}`
   return (
-    <li key={postItem.id} className="post-list-item">
+    <li key={postItem.id} className={liClass}>
       <a onClick={handleClick}>{postItem.slug}</a>
     </li>
   )
