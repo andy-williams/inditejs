@@ -16,7 +16,7 @@ const onPostClick = (id) =>
 export default class App extends Component {
   render() {
     let editorProps = {
-      mdvalue: store.getState().app.editor.mdValue,
+      mdValue: store.getState().app.editor.mdValue,
       htmlValue: store.getState().app.editor.htmlValue,
       onMdChange: (mdVal) => {
         store.dispatch(changeContent(mdVal))

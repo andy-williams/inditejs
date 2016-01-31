@@ -7,6 +7,10 @@ import {
   UPDATE_POST_LIST_REQUEST,
   UPDATE_POST_LIST_SUCCESS,
 } from './../actions/app';
+import {
+  CHANGE_CONTENT,
+  OPEN_CONTENT
+} from './../actions/editor';
 
 const initialState = {
   posts: [],
@@ -46,6 +50,14 @@ export default function app(state = initialState, action) {
         isPostListUpdating: false,
         posts: action.posts
       })
+
+    // todo: must be a better way of doing this?
+    case CHANGE_CONTENT:
+    case OPEN_CONTENT:
+      return Object.assign({}, state, {
+        editor: editor(state.editor, action)
+      })
+
 
   }
 
