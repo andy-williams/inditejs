@@ -1,5 +1,7 @@
 # InditeJs
 
+[![Build Status](https://travis-ci.org/andy-williams/inditejs.svg?branch=master)](https://travis-ci.org/andy-williams/inditejs)
+
 A bridge between static site generator with manually managing files and a blogging platform driven by a database.
 
 This tool provides a web front-end for managing your Jekyll blog content as if you were using a blogging platform.
