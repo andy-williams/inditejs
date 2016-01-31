@@ -1,5 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+
+// todo: perhaps use some src dir relative technique for imports
 import store from '../../store';
 import PostList from './../components/PostList';
 import Editor from './../components/Editor';
@@ -10,6 +12,7 @@ import {
   updatePostList
 } from './../../actions/app';
 
+// todo: sort this mess
 const onPostClick = (id) =>
   store.dispatch(fetchPost(id));
 
