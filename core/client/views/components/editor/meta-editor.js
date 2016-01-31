@@ -32,4 +32,4 @@ const MetaEditor = ({
   </div>
 )
 
-export MetaEditor;
+export default MetaEditor;
