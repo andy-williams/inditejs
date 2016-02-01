@@ -74,3 +74,19 @@
 .post-list-item a:hover:before {
   background: #e3e3e3;
 }
+
+.post-list-control-container {
+  padding: 16px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.post-list-control .search-filter {
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.post-list-control .search-filter:focus {
+  box-shadow: 0 2px 2px 0 #eee;
+  outline: none;
+}
