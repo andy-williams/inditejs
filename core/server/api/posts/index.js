@@ -13,7 +13,7 @@ var getPostThunk = function(src) {
         id: filename,
         slug: postUtils.getPostSlug(filename),
         date: dateFormat(postUtils.getPostDate(filename), 'yyyy-mm-dd'),
-        metaData: postUtils.getPostMetaData(data),
+        meta: postUtils.getPostMetaData(data),
         content: postUtils.getPostContent(data)
       });
     }, function(err) {

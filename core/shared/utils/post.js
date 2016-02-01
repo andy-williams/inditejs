@@ -6,7 +6,9 @@ module.exports.getPostDate = function (filename) {
 };
 
 module.exports.getPostSlug = function (filename) {
-  return filename.slice(11);
+  var filenameAfterDate = filename.slice(11);
+  var lastIndex = filenameAfterDate.lastIndexOf('.');
+  return filenameAfterDate.slice(0, lastIndex);
 };
 
 module.exports.getPostMetaData = function (fileContent) {

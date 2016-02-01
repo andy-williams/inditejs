@@ -7,9 +7,13 @@ export const UPDATE_POST_LIST_REQUEST = 'UPDATE_POST_LIST_REQUEST';
 export const UPDATE_POST_LIST_SUCCESS = 'UPDATE_POST_LIST_SUCCESS';
 export const UDPATE_POST_LIST_FAIL = 'UDPATE_POST_LIST_FAIL';
 
-export const OPEN_POST_REQUEST = 'OPEN_POST_REQUEST';
-export const OPEN_POST_SUCCESS = 'OPEN_POST_SUCCESS';
-export const OPEN_POST_FAIL = 'OPEN_POST_FAIL';
+export const PREVIEW_POST_REQUEST = 'PREVIEW__POST_REQUEST';
+export const PREVIEW_POST_SUCCESS = 'PREVIEW__POST_SUCCESS';
+export const PREVIEW_POST_FAIL = 'PREVIEW__POST_FAIL';
+
+export const EDIT_POST_REQUEST = 'EDIT_POST_REQUEST';
+export const EDIT_POST_SUCCESS = 'EDIT_POST_SUCCESS';
+export const EDIT_POST_FAIL = 'EDIT_POST_FAIL';
 
 export const SAVE_POST_REQUEST = 'SAVE_POST_REQUEST';
 export const SAVE_POST_SUCCESS = 'SAVE_POST_SUCCESS';
@@ -19,29 +23,29 @@ export const DELETE_POST_REQUEST = 'DELETE_POST_REQUEST';
 export const DELETE_POST_SUCCESS_= 'DELETE_POST_SUCCESS';
 export const DELETE_POST_FAIL = 'DELETE_POST_FAIL';
 
-// Open Post Actions
-function openPostRequest(id) {
+// Preview Post Actions
+function previewPostRequest(id) {
   return {
-    type: OPEN_POST_REQUEST,
-    id: id,
+    type: PREVIEW_POST_REQUEST,
+    id: id
   }
 }
 
-function openPostSuccess(post) {
+function previewPostSuccess(post) {
   return {
-    type: OPEN_POST_SUCCESS,
+    type: PREVIEW_POST_SUCCESS,
     post: post
   }
 }
 
-export function fetchPost(id) {
+export function fetchPreviewPost(id) {
   return function(dispatch) {
-    dispatch(openPostRequest(id));
+    dispatch(previewPostRequest(id));
 
     return fetch(`/api/posts/${id}`)
       .then(response => response.json())
       .then(json =>
-        dispatch(openPostSuccess(json))
+        dispatch(previewPostSuccess(json))
       )
   }
 }
@@ -69,6 +73,7 @@ export function updatePostList() {
       .then(json => json.map(function(post) {
         return {
           id: post.filename,
+          date: postUtils.getPostDate(post.filename),
           slug: postUtils.getPostSlug(post.filename),
           active: false
         };
