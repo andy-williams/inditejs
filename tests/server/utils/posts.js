@@ -8,7 +8,7 @@ describe('utils', function() {
     describe('getPostSlug', function() {
       it('should get title', function() {
         var expectedSlug = 'dinosaurs.markdown';
-        var slug = post.getPostSlug('2014-06-10-dinosaurs.markdown');
+        var slug = post.getPostSlug('2014-06-10-dinosaurs');
         assert.equal(expectedSlug, slug, 'incorrect slug');
       })
 
