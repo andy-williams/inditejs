@@ -5,7 +5,7 @@ const postUtils = require('./../../../shared/utils/post');
 
 // todo: perhaps use some src dir relative technique for imports
 import store from '../../store';
-import PostList from './../components/postList';
+import PostList from './../components/post-list';
 import Preview from './../components/preview';
 import { changeContent } from './../../actions/editor';
 import {
