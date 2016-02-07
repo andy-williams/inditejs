@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 const dateFormat = require('dateformat');
 
 const PostListControls = ({
@@ -13,30 +13,31 @@ const PostListControls = ({
   </div>
 )
 
+const getPostItemClass = (isActive) => `post-list-item ${isActive ? 'active' : ''}`;
 const PostItem = ({
   postItem,
   onPostClick
-}) => {
-  const handleClick = onPostClick.bind(null, postItem.id);
-  const liClass = `post-list-item ${postItem.active ? 'active' : ''}`
-  return (
-    <li key={postItem.id} className={liClass}>
-      <a onClick={handleClick}>
-        <span className="title">{postItem.slug}</span>
-        <span className="date">{postItem.date ? dateFormat(postItem.date, 'dd-mm-yyyy') : ''}</span>
-      </a>
-    </li>
-  )
+}) => (
+  <li className={getPostItemClass(postItem.active)}>
+    <a onClick={onPostClick}>
+      <span className="title">{postItem.slug}</span>
+      <span className="date">{postItem.date ? dateFormat(postItem.date, 'dd-mm-yyyy') : ''}</span>
+    </a>
+  </li>
+)
+
+PostItem.propTypes = {
+  onPostClick: PropTypes.func.isRequired,
+  postItem: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+    date: PropTypes.instanceOf(Date).isRequired
+  })
 }
 
 const PostList = ({
   posts,
   onPostClick,
-}) => {
-  const postList = posts.map(function(post) {
-    return PostItem({ postItem: post, onPostClick: onPostClick });
-  });
-  return (
+}) => (
   <div className="post-list-container">
     <div className="post-list-inner">
       {PostListControls({
@@ -44,11 +45,16 @@ const PostList = ({
         onAddClick: () => {}
       })}
       <ul className="post-list">
-        {postList}
+        {posts.map(post =>
+          <PostItem
+            key={post.id}
+            postItem={post}
+            onPostClick={() => onPostClick(post.id)}
+          />
+        )}
       </ul>
     </div>
   </div>
-  )
-}
+)
 
 export default PostList;
