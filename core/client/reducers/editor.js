@@ -1,4 +1,15 @@
-const marked = require('marked');
+const kramed = require('kramed');
+kramed.setOptions({
+  renderer: new kramed.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: false
+});
+
 import {
   CHANGE_CONTENT,
   OPEN_CONTENT
@@ -17,7 +28,7 @@ export function editor(state = initialState, action) {
     case CHANGE_CONTENT:
       return {
         mdValue: action.mdValue,
-        htmlValue: marked(action.mdValue)
+        htmlValue: kramed(action.mdValue)
       }
 
     case OPEN_CONTENT:
@@ -25,7 +36,7 @@ export function editor(state = initialState, action) {
       return {
         mdValue: post.content,
         _mdValue: post.content,
-        htmlValue: marked(post.content)
+        htmlValue: kramed(post.content)
       }
   }
 
