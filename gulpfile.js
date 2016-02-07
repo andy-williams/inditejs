@@ -20,7 +20,7 @@ var config = {
     serverjs: './core/server/*/**.js',
     mainjs: './core/client/index.js',
     js: './core/client/**/*.js',
-    maincss: './core/client/style.css',
+    maincss: './core/client/styles/style.css',
     css: './core/client/**/*.css',
     dist: './dist'
   }
@@ -72,7 +72,7 @@ gulp.task('css', function () {
       .pipe(cssnano())
       .pipe(sourcemaps.write('.', {debug: true}))
       // https://github.com/unlight/gulp-cssimport/issues/12
-      .pipe(gulp.dest(config.paths.dist + '/css/css/css/css'))
+      .pipe(gulp.dest(config.paths.dist + '/css'))
 })
 
 // live rebuild
