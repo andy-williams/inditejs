@@ -1,6 +1,5 @@
 .post-list-container {
-  position: relative;
-  float: left;
+  position: fixed;
   width: 33%;
   height: 100%;
   padding: 20px;
