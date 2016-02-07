@@ -57,4 +57,12 @@ const PostList = ({
   </div>
 )
 
+PostList.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+    date: PropTypes.instanceOf(Date).isRequired
+  })).isRequired,
+  onPostClick: PropTypes.func.isRequired
+}
+
 export default PostList;

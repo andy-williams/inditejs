@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const getHtmlValue = (html) => {
   return { __html: html };
@@ -21,5 +21,12 @@ const Preview = ({
     </div>
   </div>
 )
+
+Preview.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  html: PropTypes.string.isRequired,
+  onEdiClick: PropTypes.func.isRequired
+}
 
 export default Preview;
