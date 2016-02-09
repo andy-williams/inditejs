@@ -8,7 +8,7 @@ const PostListPreview = ({
   id,
   title,
   html
-}) => {
+}) => (
   <div className="app-container">
     <PostList
       posts={posts}
@@ -21,6 +21,6 @@ const PostListPreview = ({
       onEdiClick={() => {}} // todo: implement
     />
   </div>
-}
+)
 
 export default PostListPreview;
