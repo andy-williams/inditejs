@@ -1,6 +1,7 @@
+import React from 'react';
 import { connect } from 'react-redux';
-import PostList from './../components/post-list';
-import Preview from './../components/preview';
+import PostListPreview from './../screens/post-list-preview';
+
 import {
   fetchPreviewPost
 } from './../../actions/app';
@@ -11,22 +12,23 @@ const mapStateToProps = (state) => {
     id: state.app.preview.post.id,
     title: (() => {
       const title = (state.app.preview.meta ? state.app.preview.meta.title : '');
-      return title ? title : store.getState().app.preview.post.slug
+      return title ? title : state.app.preview.post.slug
     })(),
     html: state.app.preview.post.content,
-    posts: state.posts
+    posts: state.app.posts
   }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onPostClick: (id) => dispatch(fetchPreviewPost(id))
   }
-}
+};
 
+// todo: currently not returning wrapped React component
 const PostListWithPreview = connect(
   mapStateToProps,
   mapDispatchToProps
-)()
+)(PostListPreview);
 
 export default PostListWithPreview;

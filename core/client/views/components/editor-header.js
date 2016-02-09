@@ -14,6 +14,6 @@ const EditorHeader = ({
       </div>
     </div>
   </div>
-)
+);
 
 export default EditorHeader;

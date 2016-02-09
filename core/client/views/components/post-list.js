@@ -55,7 +55,7 @@ const PostList = ({
       </ul>
     </div>
   </div>
-)
+);
 
 PostList.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.shape({
@@ -63,6 +63,6 @@ PostList.propTypes = {
     date: PropTypes.instanceOf(Date).isRequired
   })).isRequired,
   onPostClick: PropTypes.func.isRequired
-}
+};
 
 export default PostList;

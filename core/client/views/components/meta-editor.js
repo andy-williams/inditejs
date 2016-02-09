@@ -17,7 +17,7 @@ const MetaDataKeyValueEditor = ({
       </div>
     )
   })
-}
+};
 
 const MetaEditor = ({
   metaDataObj
@@ -30,6 +30,6 @@ const MetaEditor = ({
       </ul>
     </div>
   </div>
-)
+);
 
 export default MetaEditor;

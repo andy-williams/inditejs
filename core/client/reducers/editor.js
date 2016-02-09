@@ -29,7 +29,7 @@ export function editor(state = initialState, action) {
       return {
         mdValue: action.mdValue,
         htmlValue: kramed(action.mdValue)
-      }
+      };
 
     case OPEN_CONTENT:
       const post = action.post;
@@ -37,7 +37,7 @@ export function editor(state = initialState, action) {
         mdValue: post.content,
         _mdValue: post.content,
         htmlValue: kramed(post.content)
-      }
+      };
   }
 
   return initialState;

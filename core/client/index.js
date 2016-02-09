@@ -1,14 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './views/containers/app.js';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import App from './views/containers/app';
 import store from './store';
+import { updatePostList } from './actions/app';
 
-const render = () => {
-  ReactDOM.render(
-      <App />,
-      document.getElementById("app-container")
-  );
-};
+store.dispatch(updatePostList());
 
-store.subscribe(render);
-render();
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app-container')
+);
+
+//store.subscribe(render);
+//render();
