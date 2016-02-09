@@ -20,13 +20,13 @@ const Preview = ({
       <div className="content" dangerouslySetInnerHTML={getHtmlValue(html)} />
     </div>
   </div>
-)
+);
 
 Preview.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  html: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  title: PropTypes.string,
+  html: PropTypes.string,
   onEdiClick: PropTypes.func.isRequired
-}
+};
 
 export default Preview;
