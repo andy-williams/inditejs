@@ -22,6 +22,7 @@ var config = {
     js: './core/client/**/*.js',
     maincss: './core/client/styles/style.css',
     css: './core/client/**/*.css',
+    fonts: './core/client/fonts/**/*',
     dist: './dist'
   }
 }
@@ -75,6 +76,11 @@ gulp.task('css', function () {
       .pipe(gulp.dest(config.paths.dist + '/css'))
 })
 
+gulp.task('fonts', function() {
+  gulp.src(config.paths.fonts)
+      .pipe(gulp.dest(config.paths.dist + '/fonts'))
+});
+
 // live rebuild
 gulp.task('watch', function () {
   gulp.watch(config.paths.js, ['js']);
@@ -83,4 +89,4 @@ gulp.task('watch', function () {
   gulp.watch(config.paths.serverjs, ['koa-reset']);
 });
 
-gulp.task('default', ['js', 'css', 'koa', 'watch']);
+gulp.task('default', ['fonts', 'js', 'css', 'koa', 'watch']);
