@@ -6,6 +6,7 @@
 }
 
 .preview {
+  position: relative;
   width: 100%;
   background: #fff;
   border-radius: 4px;
@@ -17,5 +18,16 @@
 
 .preview .preview-title {
   border-bottom: 1px solid #c3c3c3;
-  padding-bottom: 32px;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+.preview-edit {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+  color: #ff8c28;
+  font-size: 22px;
 }

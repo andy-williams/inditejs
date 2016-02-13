@@ -15,7 +15,7 @@ const Preview = ({
 }) => (
   <div className={getClassName(title)}>
     <div className="preview">
-      <a onClick={() => { onEditClick(id) }} className="preview-edit">Edit</a>
+      <i onClick={() => { onEditClick(id) }} className="preview-edit fa fa-pencil-square-o"></i>
       <h1 className="preview-title">{title}</h1>
       <div className="content" dangerouslySetInnerHTML={getHtmlValue(html)} />
     </div>

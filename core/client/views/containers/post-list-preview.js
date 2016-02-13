@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
   return {
     id: state.app.preview.post.id,
     title: (() => {
-      const title = (state.app.preview.meta ? state.app.preview.meta.title : '');
+      const title = (state.app.preview.post.meta ? state.app.preview.post.meta.title : '');
       return title ? title : state.app.preview.post.slug
     })(),
     html: state.app.preview.post.content,

@@ -1,0 +1,83 @@
+textarea {
+  font-family: 'Droid Sans Mono', monospace;
+}
+
+body {
+  font-family: "Droid Sans",Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.125em;
+  line-height: 1.8333333333333333em;
+}
+h1 {
+  font-family: inherit;
+  font-weight: 600;
+  font-style: inherit;
+  font-size: 4.222222222222222em;
+  line-height: 1.3026315789473684em;
+  margin-top: 0.43421052631578944em;
+  margin-bottom: 0.8684210526315789em;
+}
+h2 {
+  font-family: inherit;
+  font-weight: 600;
+  font-style: inherit;
+  font-size: 2.611111111111111em;
+  line-height: 1.404255319148936em;
+  margin-top: 0.702127659574468em;
+  margin-bottom: 0.702127659574468em;
+}
+h3 {
+  font-family: inherit;
+  font-weight: 600;
+  font-style: inherit;
+  font-size: 1.6111111111111112em;
+  line-height: 2.275862068965517em;
+  margin-top: 1.1379310344827585em;
+  margin-bottom: 0em;
+}
+h4 {
+  font-family: inherit;
+  font-weight: 600;
+  font-style: inherit;
+  font-size: 1em;
+  line-height: 3.6666666666666665em;
+  margin-top: 1.8333333333333333em;
+  margin-bottom: 0em;
+}
+h5 {
+  font-family: inherit;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1em;
+  line-height: 1.8333333333333333em;
+  margin-top: 1.8333333333333333em;
+  margin-bottom: 0em;
+}
+p, ul, ol, pre, table, blockquote {
+  margin-top: 0em;
+  margin-bottom: 1.8333333333333333em;
+}
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+b, strong, em, small, code {
+  line-height: 1;
+}
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+a {
+  color: #268ED9;
+}
