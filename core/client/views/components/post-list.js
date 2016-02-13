@@ -7,8 +7,10 @@ const PostListControls = ({
   }) => (
   <div className="post-list-control-container">
     <div className="post-list-control">
-      <input onChange={(e) => onSearchFilterChange(e.target.value)}  type="text" className="search-filter" placeholder="Search Posts..." />
-      <a onClick={onAddClick} className="new-post">Add</a>
+      <i onClick={onAddClick} className="new-post fa fa-plus-square"></i>
+      <div className="form-control">
+        <input onChange={(e) => onSearchFilterChange(e.target.value)}  type="text" className="search-filter" placeholder="Search Posts..." />
+      </div>
     </div>
   </div>
 )
