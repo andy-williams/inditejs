@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import PostListPreview from './../screens/post-list-preview';
+import { push } from 'react-router-redux'
 
 import {
   fetchPreviewPost
@@ -20,11 +21,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onPostClick: (id) => dispatch(fetchPreviewPost(id))
+    onPostClick: (id) => dispatch(fetchPreviewPost(id)),
+    onEditClick: (id) => dispatch(push(`/${id}`))
   }
 };
 
-// todo: currently not returning wrapped React component
 const PostListWithPreview = connect(
   mapStateToProps,
   mapDispatchToProps

@@ -26,7 +26,7 @@ Preview.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   html: PropTypes.string,
-  onEdiClick: PropTypes.func.isRequired
+  onEditClick: PropTypes.func.isRequired
 };
 
 export default Preview;

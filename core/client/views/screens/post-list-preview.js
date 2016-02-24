@@ -5,6 +5,7 @@ import Preview from './../components/preview';
 const PostListPreview = ({
   posts,
   onPostClick,
+  onEditClick,
   id,
   title,
   html
@@ -18,7 +19,7 @@ const PostListPreview = ({
       id={id}
       title={title}
       html={html}
-      onEdiClick={() => {}} // todo: implement
+      onEditClick={(id) => onEditClick(id)}
     />
   </div>
 )
