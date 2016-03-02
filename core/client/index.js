@@ -8,16 +8,18 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import PostListPreview from './views/containers/post-list-preview';
-import PostEdit from './views/containers/post-edit';
+import { PostEditRouteHandler } from './views/containers/post-edit';
 
 const history = syncHistoryWithStore(browserHistory, store);
+
+import { Component } from 'react';
 
 render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/">
+      <Route path="/" component={App}>
         <IndexRoute component={PostListPreview} />
-        <Route path="/:postId" component={PostEdit} />
+        <Route path="/:postId" component={PostEditRouteHandler} />
       </Route>
     </Router>
   </Provider>,
@@ -25,6 +27,3 @@ render(
 );
 
 store.dispatch(updatePostList());
-
-//store.subscribe(render);
-//render();

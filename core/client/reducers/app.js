@@ -11,7 +11,9 @@ import {
 } from './../actions/app';
 import {
   CHANGE_CONTENT,
-  OPEN_CONTENT
+  EDITOR_OPEN_REQUEST,
+  EDITOR_OPEN_SUCCESS,
+  EDITOR_OPEN_FAIL
 } from './../actions/editor';
 
 const initialState = {
@@ -57,7 +59,7 @@ export default function app(state = initialState, action) {
 
     // todo: must be a better way of doing this?
     case CHANGE_CONTENT:
-    case OPEN_CONTENT:
+    case EDITOR_OPEN_SUCCESS:
       return Object.assign({}, state, {
         editor: editor(state.editor, action)
       })

@@ -11,10 +11,6 @@ export const PREVIEW_POST_REQUEST = 'PREVIEW__POST_REQUEST';
 export const PREVIEW_POST_SUCCESS = 'PREVIEW__POST_SUCCESS';
 export const PREVIEW_POST_FAIL = 'PREVIEW__POST_FAIL';
 
-export const EDIT_POST_REQUEST = 'EDIT_POST_REQUEST';
-export const EDIT_POST_SUCCESS = 'EDIT_POST_SUCCESS';
-export const EDIT_POST_FAIL = 'EDIT_POST_FAIL';
-
 export const SAVE_POST_REQUEST = 'SAVE_POST_REQUEST';
 export const SAVE_POST_SUCCESS = 'SAVE_POST_SUCCESS';
 export const SAVE_POST_FAIL = 'SAVE_POST_FAIL';
@@ -83,3 +79,4 @@ export function updatePostList() {
       )
   }
 }
+

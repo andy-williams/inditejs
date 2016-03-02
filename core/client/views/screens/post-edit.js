@@ -1,12 +1,13 @@
-import { React } from 'react';
+import React from 'react';
 import Editor from './../components/editor';
 
 const PostEdit = ({
   mdValue,
   htmlValue,
   onMdChange
-}) => (
-  <div class="post-edit-container">
+}) =>
+(
+  <div>
     <Editor
       mdValue={mdValue}
       onMdChange={onMdChange}

@@ -1,11 +1,15 @@
 import { connect } from 'react-redux';
 import { changeContent } from './../../actions/editor';
 import PostEdit from './../screens/post-edit';
+import React, { Component } from 'react';
+import { fetchUpdateEditorContent } from './../../actions/editor';
+import store from './../../store';
 
 const mapStateToProps = (state) => {
   return {
-    mdValue: state.app.editor.mdValue,
-    htmlValue: state.app.editor.htmlValue
+    id: state.routing,
+    mdValue: state.app.editor.data.mdValue,
+    htmlValue: state.app.editor.data.htmlValue
   }
 };
 
@@ -21,3 +25,15 @@ const PostEditContainer = connect(
 )(PostEdit);
 
 export default PostEditContainer;
+
+export class PostEditRouteHandler extends Component {
+  render() {
+    const { postId } = this.props.params;
+    store.dispatch(fetchUpdateEditorContent(postId)); // dispatch event
+    return (
+      <div>
+        <PostEditContainer />
+      </div>
+    )
+  }
+};
