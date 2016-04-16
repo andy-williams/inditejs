@@ -5,22 +5,14 @@ import Preview from './../components/preview';
 const PostListPreview = ({
   posts,
   onPostClick,
-  onEditClick,
-  id,
-  title,
-  html
+  children
 }) => (
   <div className="app-container">
     <PostList
       posts={posts}
       onPostClick={(id) => onPostClick(id)}
     />
-    <Preview
-      id={id}
-      title={title}
-      html={html}
-      onEditClick={(id) => onEditClick(id)}
-    />
+    {children}
   </div>
 )
 

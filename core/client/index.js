@@ -8,7 +8,8 @@ import { updatePostList } from './actions/app';
 
 // containers
 import App from './views/containers/app';
-import PostListPreview from './views/containers/post-list-preview';
+import PostListPreviewContainer from './views/containers/post-list-preview';
+import PostPreviewContainer from './views/containers/post-preview';
 import { PostEditRouteHandler } from './views/containers/post-edit';
 
 const history = syncHistoryWithStore(browserHistory, store);
@@ -16,9 +17,12 @@ const history = syncHistoryWithStore(browserHistory, store);
 render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}>
-        <IndexRoute component={PostListPreview} />
-        <Route path="/:postId" component={PostEditRouteHandler} />
+      <Route component={App}>
+        <Route path="/" component={PostListPreviewContainer}>
+          <Route path="preview/:postId" component={PostPreviewContainer} />
+        </Route>
+        <Route path="edit/:postId" component={PostEditRouteHandler} />
+        <Route path="add/:postId" component={PostEditRouteHandler} />
       </Route>
     </Router>
   </Provider>,

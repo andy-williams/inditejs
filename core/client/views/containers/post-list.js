@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
-import PostListPreviewScreen from './../screens/post-list-preview';
+import PostList from './../components/post-list';
 import { push } from 'react-router-redux'
-import React, { Component } from 'react';
-import { fetchPreviewPost } from './../../actions/app';
+
+import {
+  fetchPreviewPost
+} from './../../actions/app';
 
 
 const mapStateToProps = (state) => {
@@ -17,9 +19,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-const PostListPreviewContainer = connect(
+const PostListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(PostListPreviewScreen);
+)(PostList);
 
-export default PostListPreviewContainer;
+export default PostListContainer;
