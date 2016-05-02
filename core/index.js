@@ -1,10 +1,10 @@
-var serve = require('koa-static');
+var fs = require('fs');
 var koa = require('koa');
+var mount = require('koa-mount');
+var path = require('path');
 var route = require('koa-route');
 var Router = require('koa-router');
-var mount = require('koa-mount');
-var fs = require('fs');
-var path = require('path');
+var serve = require('koa-static');
 var postsApi = require('./server/api/posts');
 var tfs = require('./server/utils/fs');
 

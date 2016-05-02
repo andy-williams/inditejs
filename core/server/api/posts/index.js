@@ -1,9 +1,9 @@
+var path = require('path');
+var dateFormat = require('dateformat');
 var posts = require('./../../models/posts');
 var tfs = require('./../../utils/fs');
-var path = require('path');
 var config = require('./../../config');
 var postUtils = require('./../../../shared/utils/post');
-var dateFormat = require('dateformat');
 
 var getPostThunk = function(src) {
   return new Promise(function(resolve, reject) {
