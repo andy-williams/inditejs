@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-const dateFormat = require('dateformat');
 
 const PostListPreview = ({
   PostList,

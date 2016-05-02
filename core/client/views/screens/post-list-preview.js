@@ -14,6 +14,6 @@ const PostListPreview = ({
     />
     {children}
   </div>
-)
+);
 
 export default PostListPreview;

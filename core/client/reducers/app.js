@@ -62,7 +62,7 @@ export default function app(state = initialState, action) {
     case EDITOR_OPEN_SUCCESS:
       return Object.assign({}, state, {
         editor: editor(state.editor, action)
-      })
+      });
   }
 
   return state;

@@ -6,7 +6,7 @@ import {
 
 export const initialState = {
   isOpen: false,
-  metaDataCollecton: []
+  metaDataCollection: []
 };
 
 export function metaList(state = initialState, action) {
@@ -22,7 +22,7 @@ export function metaList(state = initialState, action) {
       });
     case POPULATE_META_DATA_LIST:
       return state.object.assign({}, state, {
-        metaDataCollection: action.metaDataCollecton
+        metaDataCollection: action.metaDataCollection
       });
     default:
       return state;

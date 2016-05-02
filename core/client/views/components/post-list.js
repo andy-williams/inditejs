@@ -13,7 +13,7 @@ const PostListControls = ({
       </div>
     </div>
   </div>
-)
+);
 
 const getPostItemClass = (isActive) => `post-list-item ${isActive ? 'active' : ''}`;
 const PostItem = ({
@@ -26,7 +26,7 @@ const PostItem = ({
       <span className="date">{postItem.date ? dateFormat(postItem.date, 'dd-mm-yyyy') : ''}</span>
     </a>
   </li>
-)
+);
 
 PostItem.propTypes = {
   onPostClick: PropTypes.func.isRequired,
@@ -34,7 +34,7 @@ PostItem.propTypes = {
     slug: PropTypes.string.isRequired,
     date: PropTypes.instanceOf(Date).isRequired
   })
-}
+};
 
 const PostList = ({
   posts,

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import PostList from './../components/post-list';
 import { push } from 'react-router-redux'
+import PostList from './../components/post-list';
 
 import {
   fetchPreviewPost

@@ -1,4 +1,7 @@
-import { SHOW_PREVIEW, CLOSE_PREVIEW } from './../actions/preview';
+import {
+  SHOW_PREVIEW,
+  CLOSE_PREVIEW
+} from './../actions/preview';
 
 export const initialState = {
   isOpen: false,

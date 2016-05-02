@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
-import PostListPreviewScreen from './../screens/post-list-preview';
 import { push } from 'react-router-redux'
 import React, { Component } from 'react';
 import { fetchPreviewPost } from './../../actions/app';
-
+import PostListPreviewScreen from './../screens/post-list-preview';
 
 const mapStateToProps = (state) => {
   return {

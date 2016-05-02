@@ -1,10 +1,15 @@
-import React from 'react';
-import { render } from 'react-dom';
+import {
+  Router,
+  Route,
+  IndexRoute,
+  browserHistory
+} from 'react-router';
+
 import { Provider } from 'react-redux';
-import store from './store';
 import { syncHistoryWithStore } from 'react-router-redux';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { updatePostList } from './actions/app';
+import { render } from 'react-dom';
+import React from 'react';
+import store from './store';
 
 // containers
 import App from './views/containers/app';
@@ -30,4 +35,5 @@ render(
 );
 
 // init dispatch
+import { updatePostList } from './actions/app';
 store.dispatch(updatePostList());

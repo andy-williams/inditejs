@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import PostPreview from './../components/preview';
 import { push } from 'react-router-redux'
 import React, { Component } from 'react';
 import { fetchPreviewPost } from './../../actions/app';
 import store from './../../store';
+import PostPreview from './../components/preview';
 
 
 const mapStateToProps = (state) => {

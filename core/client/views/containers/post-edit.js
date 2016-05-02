@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
+import React, { Component } from 'react';
+import store from './../../store';
+import { fetchUpdateEditorContent } from './../../actions/editor';
 import { changeContent } from './../../actions/editor';
 import PostEdit from './../screens/post-edit';
-import React, { Component } from 'react';
-import { fetchUpdateEditorContent } from './../../actions/editor';
-import store from './../../store';
 
 const mapStateToProps = (state) => {
   return {
